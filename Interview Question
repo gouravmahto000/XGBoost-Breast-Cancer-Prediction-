@@ -1,0 +1,585 @@
+===========================
+XGBOOST INTERVIEW QUESTIONS & ANSWERS
+===========================
+
+1. What is XGBoost?
+
+Answer:
+XGBoost (Extreme Gradient Boosting) is an optimized implementation of the Gradient Boosting algorithm. It builds multiple decision trees sequentially, where each new tree corrects the mistakes of the previous tree. It is known for its high accuracy, speed, and built-in regularization.
+
+--------------------------------------------------
+
+2. What does XGBoost stand for?
+
+Answer:
+Extreme Gradient Boosting.
+
+--------------------------------------------------
+
+3. Who developed XGBoost?
+
+Answer:
+Tianqi Chen in 2014.
+
+--------------------------------------------------
+
+4. What type of Machine Learning algorithm is XGBoost?
+
+Answer:
+XGBoost is a Supervised Machine Learning algorithm.
+
+It is used for:
+• Classification
+• Regression
+• Ranking
+
+--------------------------------------------------
+
+5. Is XGBoost an Ensemble Learning algorithm?
+
+Answer:
+Yes.
+
+It combines multiple weak decision trees to create one strong predictive model.
+
+--------------------------------------------------
+
+6. What is Boosting?
+
+Answer:
+Boosting is an ensemble technique where models are trained sequentially. Each new model focuses on correcting the mistakes made by the previous model.
+
+--------------------------------------------------
+
+7. What is Gradient Boosting?
+
+Answer:
+Gradient Boosting builds decision trees one after another. Each new tree learns from the residual errors of previous trees to reduce the overall prediction error.
+
+--------------------------------------------------
+
+8. Why is it called "Extreme" Gradient Boosting?
+
+Answer:
+Because it is a highly optimized version of Gradient Boosting with:
+• Parallel Processing
+• Tree Pruning
+• Regularization
+• Faster Computation
+• Better Memory Management
+
+--------------------------------------------------
+
+9. Is XGBoost supervised or unsupervised?
+
+Answer:
+Supervised Learning.
+
+--------------------------------------------------
+
+10. Is XGBoost Tree-Based?
+
+Answer:
+Yes.
+
+--------------------------------------------------
+
+11. What are Weak Learners?
+
+Answer:
+Weak learners are models that perform only slightly better than random guessing. In XGBoost, weak learners are Decision Trees.
+
+--------------------------------------------------
+
+12. What are Strong Learners?
+
+Answer:
+A strong learner is created by combining many weak learners to achieve high prediction accuracy.
+
+--------------------------------------------------
+
+13. Difference between Bagging and Boosting?
+
+Answer:
+
+Bagging
+• Parallel training
+• Reduces variance
+• Trees are independent
+• Example: Random Forest
+
+Boosting
+• Sequential training
+• Reduces bias
+• Trees depend on previous trees
+• Example: XGBoost
+
+--------------------------------------------------
+
+14. Difference between Random Forest and XGBoost?
+
+Answer:
+
+Random Forest
+• Bagging
+• Independent Trees
+• Faster Training
+• Less Parameter Tuning
+
+XGBoost
+• Boosting
+• Sequential Trees
+• More Accurate
+• Uses Regularization
+• More Parameter Tuning
+
+--------------------------------------------------
+
+15. What is Residual?
+
+Answer:
+Residual = Actual Value - Predicted Value
+
+Residual represents the error made by the model.
+
+--------------------------------------------------
+
+16. What is the Objective Function?
+
+Answer:
+
+Objective Function = Loss Function + Regularization
+
+It minimizes prediction error while preventing overfitting.
+
+--------------------------------------------------
+
+17. What is Regularization?
+
+Answer:
+Regularization penalizes complex models to reduce overfitting.
+
+--------------------------------------------------
+
+18. Which Regularizations are used in XGBoost?
+
+Answer:
+
+L1 Regularization (reg_alpha)
+
+L2 Regularization (reg_lambda)
+
+--------------------------------------------------
+
+19. What is Overfitting?
+
+Answer:
+Overfitting occurs when a model learns the training data too well, including noise, resulting in poor performance on unseen data.
+
+--------------------------------------------------
+
+20. What is Underfitting?
+
+Answer:
+Underfitting occurs when the model is too simple to capture patterns in the data.
+
+--------------------------------------------------
+
+21. How does XGBoost prevent Overfitting?
+
+Answer:
+• L1 Regularization
+• L2 Regularization
+• Gamma
+• Max Depth
+• Subsample
+• Colsample_bytree
+• Early Stopping
+
+--------------------------------------------------
+
+22. Does XGBoost require Feature Scaling?
+
+Answer:
+No.
+
+Because XGBoost is a tree-based algorithm.
+
+--------------------------------------------------
+
+23. Can XGBoost handle Missing Values?
+
+Answer:
+Yes.
+
+XGBoost automatically learns the best direction for missing values.
+
+--------------------------------------------------
+
+24. What is Tree Pruning?
+
+Answer:
+Tree pruning removes unnecessary branches that do not improve prediction accuracy.
+
+--------------------------------------------------
+
+25. What is Parallel Processing?
+
+Answer:
+Parallel Processing allows multiple computations to run simultaneously, making XGBoost faster.
+
+--------------------------------------------------
+
+26. What is Cross Validation?
+
+Answer:
+Cross Validation evaluates the model by dividing the dataset into multiple folds.
+
+--------------------------------------------------
+
+27. Why use Cross Validation?
+
+Answer:
+• Better Performance Estimate
+• Reduces Overfitting
+• Uses entire dataset efficiently
+
+--------------------------------------------------
+
+28. What is n_estimators?
+
+Answer:
+Number of trees to build.
+
+Example:
+
+n_estimators = 300
+
+--------------------------------------------------
+
+29. What is learning_rate?
+
+Answer:
+Controls how much each tree contributes to the final prediction.
+
+Small Value
+• More Trees
+• Better Accuracy
+
+Large Value
+• Faster Training
+• May Overfit
+
+--------------------------------------------------
+
+30. What is max_depth?
+
+Answer:
+Maximum depth of each decision tree.
+
+--------------------------------------------------
+
+31. What is min_child_weight?
+
+Answer:
+Minimum weight required to create a child node.
+
+--------------------------------------------------
+
+32. What is gamma?
+
+Answer:
+Minimum loss reduction required before making a split.
+
+Higher gamma = fewer splits.
+
+--------------------------------------------------
+
+33. What is subsample?
+
+Answer:
+Percentage of training rows randomly selected for each tree.
+
+--------------------------------------------------
+
+34. What is colsample_bytree?
+
+Answer:
+Percentage of features randomly selected for each tree.
+
+--------------------------------------------------
+
+35. What is reg_alpha?
+
+Answer:
+L1 Regularization.
+
+It creates sparse models and reduces overfitting.
+
+--------------------------------------------------
+
+36. What is reg_lambda?
+
+Answer:
+L2 Regularization.
+
+It reduces overfitting by penalizing large weights.
+
+--------------------------------------------------
+
+37. What is objective?
+
+Answer:
+Defines the learning task.
+
+Examples:
+
+binary:logistic
+multi:softprob
+reg:squarederror
+
+--------------------------------------------------
+
+38. What is booster?
+
+Answer:
+
+Three boosters are available:
+
+gbtree
+dart
+gblinear
+
+--------------------------------------------------
+
+39. What is tree_method?
+
+Answer:
+Determines how trees are built.
+
+Options:
+
+exact
+approx
+hist
+
+--------------------------------------------------
+
+40. Why use hist?
+
+Answer:
+Histogram method is much faster and consumes less memory.
+
+--------------------------------------------------
+
+41. What is eval_metric?
+
+Answer:
+Measures model performance during training.
+
+Examples:
+
+logloss
+auc
+error
+rmse
+
+--------------------------------------------------
+
+42. What is random_state?
+
+Answer:
+Ensures reproducible results.
+
+--------------------------------------------------
+
+43. What is verbosity?
+
+Answer:
+Controls training messages.
+
+0 = Silent
+
+1 = Warning
+
+2 = Info
+
+3 = Debug
+
+--------------------------------------------------
+
+44. What is scale_pos_weight?
+
+Answer:
+Balances imbalanced datasets.
+
+--------------------------------------------------
+
+45. What is early_stopping_rounds?
+
+Answer:
+Stops training when validation performance stops improving.
+
+--------------------------------------------------
+
+46. What is Feature Importance?
+
+Answer:
+Feature Importance tells how much each feature contributes to the prediction.
+
+--------------------------------------------------
+
+47. Why is Feature Importance important?
+
+Answer:
+• Model Explainability
+• Feature Selection
+• Business Insights
+
+--------------------------------------------------
+
+48. Which Evaluation Metrics are used?
+
+Answer:
+
+Classification
+
+• Accuracy
+• Precision
+• Recall
+• F1 Score
+• ROC-AUC
+• Log Loss
+
+Regression
+
+• MAE
+• MSE
+• RMSE
+• R² Score
+
+--------------------------------------------------
+
+49. Why did you choose XGBoost?
+
+Answer:
+I selected XGBoost because it provides high accuracy, handles missing values, includes built-in regularization, supports feature importance, and performs exceptionally well on structured datasets.
+
+--------------------------------------------------
+
+50. Explain your Breast Cancer XGBoost Project.
+
+Answer:
+I developed a Breast Cancer Prediction model using XGBoost. First, I cleaned the dataset by removing unnecessary columns such as id and Unnamed:32. Then I encoded the diagnosis column, split the data into training and testing sets, trained an XGBoost classifier, evaluated it using Accuracy, Precision, Recall, F1-score, and Confusion Matrix, and analyzed Feature Importance to identify the most influential features.
+
+--------------------------------------------------
+
+51. Why remove the id column?
+
+Answer:
+Because it is only a unique identifier and has no relationship with the target variable.
+
+--------------------------------------------------
+
+52. Why remove Unnamed:32?
+
+Answer:
+Because it contains only null values and provides no useful information.
+
+--------------------------------------------------
+
+53. What was your target variable?
+
+Answer:
+Diagnosis
+
+M = Malignant
+
+B = Benign
+
+--------------------------------------------------
+
+54. Why use train_test_split()?
+
+Answer:
+To train the model on one part of the data and evaluate it on unseen data.
+
+--------------------------------------------------
+
+55. What are the main advantages of XGBoost?
+
+Answer:
+• High Accuracy
+• Fast Training
+• Parallel Processing
+• Regularization
+• Handles Missing Values
+• Feature Importance
+• Cross Validation Support
+• Excellent Performance on Structured Data
+
+--------------------------------------------------
+
+56. What are the limitations of XGBoost?
+
+Answer:
+• Many Hyperparameters
+• Can Overfit if not tuned
+• Less Interpretable than a single Decision Tree
+• Longer Training Time than simple models
+
+--------------------------------------------------
+
+57. Difference between XGBoost and AdaBoost?
+
+Answer:
+
+AdaBoost
+• Updates sample weights
+• Sensitive to noise
+• No regularization
+
+XGBoost
+• Learns residual errors
+• Uses regularization
+• More accurate
+• Faster
+• More robust
+
+--------------------------------------------------
+
+58. Difference between XGBoost and LightGBM?
+
+Answer:
+
+XGBoost
+• Level-wise tree growth
+• Better on small and medium datasets
+
+LightGBM
+• Leaf-wise tree growth
+• Faster on very large datasets
+
+--------------------------------------------------
+
+59. Difference between XGBoost and CatBoost?
+
+Answer:
+
+XGBoost
+• Requires encoding categorical variables
+
+CatBoost
+• Handles categorical variables automatically
+
+--------------------------------------------------
+
+60. When should you use XGBoost?
+
+Answer:
+Use XGBoost when:
+• Working with structured/tabular data
+• High prediction accuracy is required
+• Solving classification or regression problems
+• Feature importance is needed
+• Dataset size is medium to large
